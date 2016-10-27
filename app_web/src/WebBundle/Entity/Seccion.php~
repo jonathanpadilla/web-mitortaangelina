@@ -1,0 +1,60 @@
+<?php
+
+namespace WebBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Seccion
+ *
+ * @ORM\Table(name="seccion")
+ * @ORM\Entity
+ */
+class Seccion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen", type="string", length=100, nullable=true)
+     */
+    private $imagen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texto1", type="text", length=65535, nullable=true)
+     */
+    private $texto1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texto2", type="text", length=65535, nullable=true)
+     */
+    private $texto2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texto3", type="text", length=65535, nullable=true)
+     */
+    private $texto3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comentario", type="text", length=65535, nullable=true)
+     */
+    private $comentario;
+
+
+}

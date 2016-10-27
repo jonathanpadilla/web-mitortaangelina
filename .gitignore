@@ -1,0 +1,3 @@
+app_web/app/cache/*
+app_web/app/logs/*
+node_modules

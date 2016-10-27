@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mi Torta Angelina</title>
+
+      <link rel="stylesheet" href="{{ absolute_url(asset('css/app.css')) }}">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+
+  </head>
+  <body>
+
+    <!-- loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- loader end -->
+    
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
+            <ul id="menu-mobile" class="menu vertical">
+                      <li><a href="./" class="selected">Inicio</a></li><!--
+                      --><li><a href="nosotros.html">Nosotros</a></li><!--
+                      --><li><a href="arma.html">Arma tu Torta</a></li><!--
+                      --><li><a href="categoria.html">Categoria</a></li><!--
+                      --><li><a href="galeria.html">Galer&iacute;a</a></li><!--
+                      --><li><a href="contacto.html">Contacto</a>
+                    </ul>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+        
+          <!-- offcanvas -->
+          <button type="button" id="btn-menu" class="icon-top" data-toggle="offCanvas">
+                  <i class="menu-icon "></i>
+                  <span>MENU</span>
+          </button>
+
+          <div id="header">
+          
+            <div class="row">
+              <div class="large-12 columns">
+          
+                <div class="wrapper">
+
+                  <div id="logo">
+                    <a href="./"><img src="img/logo.png"></a>
+                  </div>
+          
+                  <div id="nav">
+                    <ul>
+                      <li><a href="./" class="selected">Inicio</a></li><!--
+                      --><li><a href="nosotros.html">Nosotros</a></li><!--
+                      --><li><a href="arma.html">Arma tu Torta</a></li><!--
+                      --><li><a href="./"><img src="img/logo.png"></a></li><!--
+                      --><li><a href="categoria.html">Categoria</a></li><!--
+                      --><li><a href="galeria.html">Galer&iacute;a</a></li><!--
+                      --><li><a href="contacto.html">Contacto</a>
+                    </ul>
+                  </div>
+          
+                </div>
+          
+              </div>
+            </div>
+          
+          </div>
+
+          <div id="slider">
+          
+            <div class="row">
+              <div class="medium-12 columns">
+          
+                <div class="wrapper">
+          
+                  <div id="slide">
+                    
+                    <div id="owl-demo" class="owl-carousel owl-theme">
+                        
+                      <div class="item"><img src="img/banner1.jpg" alt=""></div>
+                      <div class="item"><img src="img/banner1.jpg" alt=""></div>
+                       
+                    </div>
+
+                  </div>
+          
+                </div>
+          
+              </div>
+            </div>
+          
+          </div>
+        
+        {% block content %}
+
+        {% endblock %}
+
+        <div id="footer">
+          
+            <div class="row" data-equalizer>
+              
+              <div class="small-6 medium-3 large-3 columns" data-equalizer-watch>
+                <h6>Pedidos y Consultas</h6>
+                
+                <div id="t-f">
+                  <img src="{{ absolute_url(asset('img/phone.png')) }}">
+                  <span>Tel&eacute;fono fijo</span> <br><h6>&#43;56 9 53347081</h6>
+                </div>
+
+                <div id="t-f">
+                  <img src="{{ absolute_url(asset('img/phone.png')) }}">
+                  <span>fono ventas</span> <br><h6>&#43;56 9 95533800</h6>
+                </div>
+
+              </div>
+
+              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
+                <h5>NOSOTROS</h5>
+                <ul>
+                  <li>Mi Torta Angelina</li>
+                  <li>Tortas</li>
+                  <li>Decoraciones</li>
+                </ul>
+              </div>
+
+              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
+                <h5>PRODUCTOS</h5>
+                <ul>
+                  <li>Mi Torta Angelina</li>
+                  <li>Tortas</li>
+                  <li>Decoraciones</li>
+                </ul>
+              </div>
+
+              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
+                <h5>DECORACIONES</h5>
+                <ul>
+                  <li>Mi Torta Angelina</li>
+                  <li>Tortas</li>
+                  <li>Decoraciones</li>
+                </ul>
+              </div>
+
+              <div class="medium-2 columns" id="more-speed">
+                <img src="{{ absolute_url(asset('img/logo2.png')) }}" class="img-del">
+              </div>
+
+            </div>
+          
+          </div>
+
+          <!-- offcanvas end -->
+
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ absolute_url(asset('bower_components/jquery/dist/jquery.js')) }}"></script>
+    <script src="{{ absolute_url(asset('bower_components/what-input/what-input.js')) }}"></script>
+    <script src="{{ absolute_url(asset('bower_components/foundation-sites/dist/foundation.js')) }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TinyNav.js/1.2.0/tinynav.min.js"></script>
+
+    <script src="{{ absolute_url(asset('js/app.js')) }}"></script>
+    {% if session %}
+      <script src="{{ absolute_url(asset('js/admin.js')) }}"></script>
+    {% endif %}
+
+    <script>
+      $(document).ready(function() {
+        
+        $("#owl-demo").owlCarousel({
+       
+            navigation : false, // Show next and prev buttons
+            slideSpeed : 200,
+            singleItem:true,
+            autoPlay: true,
+            pagination: false,
+       
+            // "singleItem:true" is a shortcut for:
+            // items : 1, 
+            // itemsDesktop : false,
+            // itemsDesktopSmall : false,
+            // itemsTablet: false,
+            // itemsMobile : false
+            //-37.0985489,-72.5645894
+       
+        });
+
+        $( window ).resize(function() {
+          $("#owl-demo").data('owlCarousel').updateVars();
+        });
+
+        $("#owl-demo").data('owlCarousel').updateVars();
+       
+      });
+    </script>
+
+    <script>
+        $(function () {
+          $("#nav").tinyNav();
+        });
+    </script>
+
+  </body>
+</html>

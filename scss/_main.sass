@@ -1,0 +1,476 @@
+*
+	outline: none
+
+.row
+	max-width: 62.510rem
+
+.js-off-canvas-exit
+	z-index: 999
+
+#offCanvas
+	height: 100%
+	background: #222
+	z-index: 999999 !important
+
+
+.off-canvas-content, .off-canvas-content, .off-canvas-wrapper-inner
+	background: none
+	//overflow: hidden
+
+#menu-mobile
+	li
+		&:first-child
+			margin-top: 15px
+		a
+			+avenir
+			color: white
+			text-transform: uppercase
+			font-size: .8em
+		.selected
+			background: #ff7282
+		&:hover
+			background: #7b4313
+
+
+#btn-menu
+	position: absolute
+	top: 15px
+	left: 25px
+	z-index: 99999
+	display: none
+
+
+	span
+		display: block
+		+avenirbold
+		color: black
+		font-size: .6em
+		margin-top: 10px
+	
+	&:hover
+		color: #fff !important
+	.menu-icon
+		&:after
+			background: #222
+			box-shadow: 0 7px 0 #222, 0 14px 0 #222
+body
+	background: url(../img/bg.jpg) center top no-repeat
+
+.title
+	.wrapper
+		margin-top: 20px
+		text-align: center
+		h2
+			+nexalight
+			color: #484848
+		img
+			margin-top: -25px
+
+#header
+	.columns
+		padding: 0px
+	.wrapper
+		width: 100%
+		height: 97px
+		background: url(../img/pattern1.jpg) left top no-repeat
+		margin-bottom: -63px
+		display: inline-block
+		z-index: 100
+		position: relative
+		min-height: 173px
+
+	#nav
+		width: 100%
+		background: url(../img/menu-bg.png) center center no-repeat
+		background-size: contain
+		padding: 0px 10px
+
+		ul
+			margin-top: 14px
+			width: 100%
+			height: 89px
+			margin-left: 0px
+			margin-bottom: 0px
+			text-align: center
+			margin-left: 10px
+			li
+				display: inline-block
+				margin-left: 30px
+				a
+					+nexalight
+					color: white
+					font-size: 1.3em
+					display: block
+			.selected
+				color: #7b4313
+	#logo
+		display: none
+#slider
+	.columns
+		padding: 0px 
+
+#bloque1
+	margin-top: 40px
+
+	.wrapper
+		#mov
+			display: inline-block
+			img
+				float: left
+				margin-bottom: 20px
+				margin-right: 5px
+			p
+				color: #797979
+
+		.txt1
+			color: #5d873b
+		.txt2
+			color: #3d847c
+		.txt3
+			color: #aa4d6d
+#bloque2
+	.columns
+		background: #ff7282
+		padding-top: 20px
+		padding-bottom: 20px
+
+		.wrapper
+			.columns
+				padding: 0px
+
+			color: white
+
+			#c-left
+				img
+
+					margin-right: 8px
+					float: left
+				p
+					text-align: justify
+					padding: 0px 27px 0px 35px
+			#c-right
+				img
+					float: right
+
+				p
+					text-align: justify
+					padding: 0px 27px 0px 0px
+
+#bloque3
+	text-align: center
+	margin-top: 50px
+	margin-bottom: 70px
+	#clr
+		background: #ff7282
+		margin-top: -65px
+	#flotante
+		z-index: 999
+		position: relative
+	.resize-div
+		height: 80px
+	h5
+		+avenirbold
+		color: #be5c7e
+
+	p
+		+avenir
+		color: white
+		padding-bottom: 40px
+		padding: 0px 11px
+
+	#clr2
+		background: #ff7282
+		border-radius: 0px 0px 100px 100px
+
+#n-cont1
+	margin-top: 30px
+	margin-bottom: 50px
+	#cont2
+		text-align: center
+		h3
+			color: #545454
+			+nexalight
+			padding-top: 25px
+	#n-txt
+		text-align: center
+		p
+			padding-top: 20px
+			color: #797979
+			+avenir
+
+#n-cont2
+
+	#txt-mid-n
+		padding-top: 20px
+		background: #ff7282
+		border-radius: 15px
+		position: relative
+		margin-top: 20px
+		margin-bottom: 100px
+
+		.torta
+			position: absolute
+			top: -80px
+			right: 0px
+
+		p
+			padding: 15px 30px 20px 50px
+			color: white
+			text-align: center
+			+avenir
+
+
+	#img-left
+		margin-left: 20px
+		float: left
+
+	#img-right
+		float: right
+		margin-top: -50px
+		margin-right: 10px
+
+#b-galeria
+	margin-bottom: 100px
+	.column
+		margin-top: 30px
+		img
+			border: 5px solid #ff7282
+			border-radius: 15px
+			margin: 0px
+			padding: 0px
+
+#cont-c		
+	margin-top: 30px
+	margin-bottom: 100px
+	.columns
+		padding: 0px
+	#map
+		height: 400px
+		width: 100%
+	#cont-mid
+		margin-top: 40px
+		padding-left: 20px
+
+		input[type="text"], input[type="email"], input[type="number"]
+
+			border: 5px solid #b1b1b1
+			border-radius: 13px
+
+		input[type="number"]
+			&::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+				appearance: none
+				margin: 0 
+		textarea
+
+			border: 5px solid #b1b1b1
+			border-radius: 13px
+			height: 200px
+		h6
+			+avenirbold
+			color: #ff7282
+
+		input[type="submit"]
+			height: 50px
+			width: 100px
+			border: 5px solid #b1b1b1
+			border-radius: 13px
+			background: none
+			color: #5b5b5b
+			display: inline-block
+			+avenirbold
+		#cont-submit
+			text-align: center
+		#cont-right
+			text-align: center
+			p
+				color: #818181
+			h5
+				color: #ff7282
+				+avenirbold
+#cont-a
+	margin-bottom: 500px
+	#txt-a
+		margin-top: 30px
+		margin-bottom: 30px
+		text-align: center
+		h4
+			color: #ff7282
+			font-weight: 500 !important
+			+avenir
+		h5
+			+avenir
+#owl-demo 
+	.item 
+		img
+			display: block
+			width: 100%
+			height: auto
+#footer
+	background: #ff7282
+	padding-top: 10px
+	color: white
+	vertical-align: bottom
+	ul
+		margin-left: 0px
+		li
+			list-style: none
+	h5
+		+avenirbold
+	h6
+		+avenirbold
+		font-size: 1.2em
+	#t-f
+		img
+			padding-top: 6px
+			float: left
+		span
+			padding-left: 5px
+	#more-speed
+		display: inline-block
+		float: none
+		padding-left: 30px
+		padding-top: 20px
+
+.tinynav
+	display: inline-block
+
+@media screen and #{breakpoint(1023px down)}
+	#bloque1
+		text-align: center !important
+
+	#footer
+		img
+			display: none
+		#more-speed
+			display: none !important
+@media screen and #{breakpoint(medium down)}
+	#bloque3
+		#cont-b3
+			padding-left: 93px
+			padding-right: 112px
+
+		#clr2
+			padding: 59px 11px
+			margin-bottom: 20px
+	#btn-menu
+		display: block
+
+@media screen and #{breakpoint(851px down)}
+
+	#bloque2
+		.columns
+			.wrapper
+				#c-left
+					p
+						text-align: justify
+						padding-right: 15px
+				#c-right
+					p
+						text-align: justify
+						padding-left: 21px
+
+@media screen and #{breakpoint(894px down)}
+
+	#bloque3
+		#clr2
+			padding-left: 4px
+			padding-right: 4px
+
+
+@media screen and #{breakpoint(886px down)}
+	#n-cont2
+		#txt-mid-n
+			text-align: center
+			.torta
+				display: none
+
+@media screen and #{breakpoint(895px down)}
+	#bloque3
+		#clr2
+			padding: 50px 11px
+
+@media screen and #{breakpoint(773px down)}
+	#footer
+		#t-f
+			h6
+				font-size: 1em
+
+
+@media screen and #{breakpoint(462px down)}
+	#bloque3 
+		#cont-b3
+			padding-left: 43px
+			padding-right: 50px
+
+
+@media screen and #{breakpoint(small down)}
+	#bloque2
+		margin-top: 20px
+		.columns
+			.wrapper
+				text-align: center
+				#c-left
+					p
+						text-align: justify
+						padding-right: 15px
+				img
+					display: inline-block
+					margin-bottom: 20px
+
+				#c-right
+					p
+						text-align: justify
+						padding-left: 21px
+
+	#bloque3
+		margin-top: 17px
+		#cont-b3
+
+
+	#n-cont1
+		h3
+			margin-bottom: -8px
+			font-size: 2em
+		#cont
+			margin-top: 50px
+
+		#n-txt 
+			p
+				padding-top: 85px
+
+	#b-galeria
+		text-align: center
+	#form1
+		margin-bottom: 40px
+
+	#header
+		.columns
+			text-align: center
+			#nav 
+				display: none
+			#logo
+				
+				display: inline-block
+				margin-top: 13px
+	.title 
+		.wrapper 
+			h2
+				font-size: 2em
+			margin-top: 43px
+
+	#cont-c
+		#cont-mid
+			#form1
+				margin-right: 20px
+
+	#footer
+		#t-f
+			h6
+				font-size: 1em
+				+avenir
+			span
+				+avenirbold
+	.tinynav
+		display: inline-block
+	#slider
+		display: none
