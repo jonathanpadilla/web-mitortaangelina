@@ -18,7 +18,7 @@ $(function(){
 		content.focusout(function(){
 
 			var texto_final = focusOutTexto(content, input, item, item_class)
-			// guardarTexto(texto_final, id, campo);
+			guardarTexto(texto_final, id, campo);
 		});
 
 	});
@@ -41,9 +41,59 @@ $(function(){
 		content.focusout(function(){
 
 			var texto_final = focusOutTexto(content, input, item, item_class)
-			// guardarTexto(texto_final, id, campo);
+			guardarTexto(texto_final, id, campo);
 
 		});
+
+	});
+
+	$("#btn_imagen_banner").on('click', function(e){
+		e.preventDefault();
+
+		$("#file_imagen_banner").trigger('click');
+		$("#file_imagen_banner").on('change', function(){
+
+			var datos = new FormData( $("#form_imagen_banner")[0] );
+			$.ajax({
+				url: Routing.generate('ajax_guardar_imagen_banner'),
+				data: datos,
+				dataType: 'json',
+				method: 'post',
+				contentType:false,
+			  	processData:false,
+			  	cache:false
+			}).success(function(json){
+				if(json.result)
+				{
+					location.reload(true);
+				}
+
+			});
+
+		});
+	});
+
+	$(".btn_eliminar_foto_banner").on('click', function(e){
+		e.preventDefault();
+		var btn = $(this);
+		var id = btn.data('id');
+
+		if(confirm('¿Realmente desea eliminar la imagen?'))
+		{
+			$.ajax({
+				url: Routing.generate('ajax_eliminar_imagen_banner'),
+				data: {'id': id},
+				dataType: 'json',
+				method: 'post',
+			}).success(function(json){
+				if(json.result)
+				{
+					location.reload(true);
+				}
+			
+			});
+
+		}
 
 	});
 
@@ -70,4 +120,26 @@ function focusOutTexto(content, texto, item, item_class)
 	var texto_real = texto.val();
 	content.html('<'+item+' class="'+item_class+'">'+texto_real+'</'+item+'>');
 	return texto_real;
+}
+
+function guardarTexto(texto, id, campo)
+{
+	var arr = {
+		'texto': texto,
+		'id': id,
+		'campo': campo
+	}
+
+	$.ajax({
+		url: Routing.generate('ajax_guardar_texto'),
+		data: arr,
+		dataType: 'json',
+		method: 'post',
+	}).success(function(json){
+		if(json.result)
+		{
+			console.log('guardado');
+		}
+
+	});
 }

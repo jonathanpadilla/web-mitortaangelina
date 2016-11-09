@@ -2,9 +2,14 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
+    
     database_name: mitortaangelina
     database_user: root
     database_password: null
+    # database_name: c589mitortaangelina
+    # database_user: c15mitortaangeli
+    # database_password: dVIsHVsa0
+
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null

@@ -7,9 +7,35 @@
       <title>Mi Torta Angelina</title>
 
       <link rel="stylesheet" href="{{ absolute_url(asset('css/app.css')) }}">
+      <link rel="stylesheet" href="{{ absolute_url(asset('css/personalizado.css')) }}">
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+      {% block css %}
+      {% endblock %}
+
+       <style>
+          .topbar_admin{
+            height: 40px;
+            background-color: #242029;
+            text-align: right;
+          }
+
+          .topbar_admin div{
+            padding-top: 8px;
+            width: 72em;
+            margin: auto;
+          }
+
+          .topbar_admin div a{
+            color: #e9daf7;
+            border: 2px solid #d1b7e8;
+            padding: 4px 20px;
+            border-radius: 7px;
+          }
+      </style>
+      <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+      <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
   </head>
   <body>
@@ -23,16 +49,24 @@
     <!-- loader end -->
     
     <div class="off-canvas-wrapper">
+      {% if session %}
+      <div class="topbar_admin">
+          <div>
+              <a href="{{ url('web_logout') }}">Salir</a>
+          </div>
+      </div>
+      {% endif %}
+
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
         <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
             <ul id="menu-mobile" class="menu vertical">
-                      <li><a href="./" class="selected">Inicio</a></li><!--
-                      --><li><a href="nosotros.html">Nosotros</a></li><!--
-                      --><li><a href="arma.html">Arma tu Torta</a></li><!--
-                      --><li><a href="categoria.html">Categoria</a></li><!--
-                      --><li><a href="galeria.html">Galer&iacute;a</a></li><!--
-                      --><li><a href="contacto.html">Contacto</a>
-                    </ul>
+              <li><a href="{{ url('web_view_inicio') }}" {{ pagina == 'inicio' ? 'class="selected"' }}>Inicio</a></li><!--
+              --><li><a href="{{ url('web_view_nosotros') }}" {{ pagina == 'nosotros' ? 'class="selected"' }}>Nosotros</a></li><!--
+              --><li><a href="{{ url('web_view_arma') }}" {{ pagina == 'arma' ? 'class="selected"' }}>Arma tu Torta</a></li><!--
+              --><li><a href="{{ url('web_view_categoria') }}" {{ pagina == 'categoria' ? 'class="selected"' }}>Categoria</a></li><!--
+              --><li><a href="{{ url('web_view_galeria') }}" {{ pagina == 'galeria' ? 'class="selected"' }}>Galer&iacute;a</a></li><!--
+              --><li><a href="{{ url('web_view_contacto') }}" {{ pagina == 'contacto' ? 'class="selected"' }}>Contacto</a>
+            </ul>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
         
@@ -50,18 +84,18 @@
                 <div class="wrapper">
 
                   <div id="logo">
-                    <a href="./"><img src="img/logo.png"></a>
+                    <a href="{{ url('web_view_inicio') }}"><img src="{{ absolute_url(asset('img/logo.png')) }}"></a>
                   </div>
           
                   <div id="nav">
                     <ul>
-                      <li><a href="./" class="selected">Inicio</a></li><!--
-                      --><li><a href="nosotros.html">Nosotros</a></li><!--
-                      --><li><a href="arma.html">Arma tu Torta</a></li><!--
-                      --><li><a href="./"><img src="img/logo.png"></a></li><!--
-                      --><li><a href="categoria.html">Categoria</a></li><!--
-                      --><li><a href="galeria.html">Galer&iacute;a</a></li><!--
-                      --><li><a href="contacto.html">Contacto</a>
+                      <li><a href="{{ url('web_view_inicio') }}" {{ pagina == 'inicio' ? 'class="selected"' }}>Inicio</a></li><!--
+                      --><li><a href="{{ url('web_view_nosotros') }}" {{ pagina == 'nosotros' ? 'class="selected"' }}>Nosotros</a></li><!--
+                      --><li><a href="{{ url('web_view_arma') }}" {{ pagina == 'arma' ? 'class="selected"' }}>Arma tu Torta</a></li><!--
+                      --><li><a href="./"><img src="{{ absolute_url(asset('img/logo.png')) }}"></a></li><!--
+                      --><li><a href="{{ url('web_view_categoria') }}" {{ pagina == 'categoria' ? 'class="selected"' }}>Categoria</a></li><!--
+                      --><li><a href="{{ url('web_view_galeria') }}" {{ pagina == 'galeria' ? 'class="selected"' }}>Galer&iacute;a</a></li><!--
+                      --><li><a href="{{ url('web_view_contacto') }}" {{ pagina == 'contacto' ? 'class="selected"' }}>Contacto</a>
                     </ul>
                   </div>
           
@@ -82,14 +116,22 @@
                   <div id="slide">
                     
                     <div id="owl-demo" class="owl-carousel owl-theme">
-                        
-                      <div class="item"><img src="img/banner1.jpg" alt=""></div>
-                      <div class="item"><img src="img/banner1.jpg" alt=""></div>
+                      {% for imagen in banner %}
+                      <div class="item"><img src="{{ absolute_url(asset(imagen.img)) }}" alt="">{% if session %}<a href="#" class="btn_eliminar_foto_banner" data-id="{{ imagen.id }}">Eliminar</a>{% endif %}</div>
+                      {% endfor %}
+                      <!-- <div class="item"><img src="{{ absolute_url(asset('img/banner1.jpg')) }}" alt="">{% if session %}<a href="#" class="btn_eliminar_foto_banner" data-id="1">Eliminar</a>{% endif %}</div> -->
                        
                     </div>
 
                   </div>
-          
+                  {% if session %}
+                    <div style="text-align:center">
+                      <a href="#" id="btn_imagen_banner">Agregar banner</a>
+                      <form action="#" id="form_imagen_banner" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file_imagen_banner" id="file_imagen_banner">
+                      </form>
+                    </div>
+                  {% endif %}
                 </div>
           
               </div>
@@ -105,49 +147,22 @@
           
             <div class="row" data-equalizer>
               
-              <div class="small-6 medium-3 large-3 columns" data-equalizer-watch>
+              <div class="large-6 columns text-center" data-equalizer-watch>
                 <h6>Pedidos y Consultas</h6>
                 
                 <div id="t-f">
-                  <img src="{{ absolute_url(asset('img/phone.png')) }}">
-                  <span>Tel&eacute;fono fijo</span> <br><h6>&#43;56 9 53347081</h6>
+                  <!-- <img src="{{ absolute_url(asset('img/phone.png')) }}"> -->
+                  <span>Tel&eacute;fono fijo</span> <br> <div class="editar_texto_input" data-item="h6" data-id="13" data-campo="2"><h6>&#43;56 9 53347081</h6></div>
                 </div>
 
                 <div id="t-f">
-                  <img src="{{ absolute_url(asset('img/phone.png')) }}">
-                  <span>fono ventas</span> <br><h6>&#43;56 9 95533800</h6>
+                  <!-- <img src="{{ absolute_url(asset('img/phone.png')) }}"> -->
+                  <span>fono ventas</span> <br><div class="editar_texto_input" data-item="h6" data-id="14" data-campo="2"><h6>&#43;56 9 95533800</h6></div>
                 </div>
 
               </div>
 
-              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
-                <h5>NOSOTROS</h5>
-                <ul>
-                  <li>Mi Torta Angelina</li>
-                  <li>Tortas</li>
-                  <li>Decoraciones</li>
-                </ul>
-              </div>
-
-              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
-                <h5>PRODUCTOS</h5>
-                <ul>
-                  <li>Mi Torta Angelina</li>
-                  <li>Tortas</li>
-                  <li>Decoraciones</li>
-                </ul>
-              </div>
-
-              <div class="small-6 medium-3 large-2 columns" data-equalizer-watch>
-                <h5>DECORACIONES</h5>
-                <ul>
-                  <li>Mi Torta Angelina</li>
-                  <li>Tortas</li>
-                  <li>Decoraciones</li>
-                </ul>
-              </div>
-
-              <div class="medium-2 columns" id="more-speed">
+              <div class="large-6 columns" id="more-speed">
                 <img src="{{ absolute_url(asset('img/logo2.png')) }}" class="img-del">
               </div>
 
@@ -169,6 +184,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/TinyNav.js/1.2.0/tinynav.min.js"></script>
 
     <script src="{{ absolute_url(asset('js/app.js')) }}"></script>
+    {% block js %}
+    {% endblock %}
     {% if session %}
       <script src="{{ absolute_url(asset('js/admin.js')) }}"></script>
     {% endif %}

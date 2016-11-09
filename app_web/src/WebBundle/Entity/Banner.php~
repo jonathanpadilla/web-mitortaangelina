@@ -1,0 +1,39 @@
+<?php
+
+namespace WebBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Banner
+ *
+ * @ORM\Table(name="banner")
+ * @ORM\Entity
+ */
+class Banner
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="string", length=100, nullable=true)
+     */
+    private $img;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="activo", type="integer", nullable=true)
+     */
+    private $activo;
+
+
+}

@@ -1,3 +1,102 @@
 web_view_inicio:
     path:     /
     defaults: { _controller: WebBundle:Inicio:inicio }
+
+web_view_nosotros:
+    path:     /nosotros/
+    defaults: { _controller: WebBundle:Nosotros:nosotros }
+
+web_view_arma:
+    path:     /arma-torta/
+    defaults: { _controller: WebBundle:Arma:arma }
+
+web_view_categoria:
+    path:     /categoria/
+    defaults: { _controller: WebBundle:Categoria:categoria }
+
+web_view_galeria:
+    path:     /galeria/
+    defaults: { _controller: WebBundle:Galeria:galeria }
+
+web_view_contacto:
+    path:     /contacto/
+    defaults: { _controller: WebBundle:Contacto:contacto }
+
+web_login:
+    path:     /admin/
+    defaults: { _controller: WebBundle:Login:login }
+
+web_login_check:
+    path:     /admin/check/
+    defaults: { _controller: WebBundle:Login:loginCheck }
+
+web_logout:
+    path:     /admin/logout/
+    defaults: { _controller: WebBundle:Login:logout }
+# AJAX
+ajax_guardar_texto:
+    path:     /admin/guardar-texto/
+    defaults: { _controller: WebBundle:Admin:guardarTexto }
+    options:
+        expose: true
+
+ajax_guardar_imagen_galeria:
+    path:     /admin/guardar-imagen-galeria/
+    defaults: { _controller: WebBundle:Admin:guardarImagenGaleria }
+    options:
+        expose: true
+
+ajax_eliminar_imagen_galeria:
+    path:     /admin/eliminar-imagen-galeria/
+    defaults: { _controller: WebBundle:Admin:eliminarImagenGaleria }
+    options:
+        expose: true
+
+ajax_enviar_contacto:
+    path:     /contacto/enviar/
+    defaults: { _controller: WebBundle:Contacto:enviarContacto }
+    methods:  [POST]
+    options:
+        expose: true
+
+ajax_guardar_imagen_banner:
+    path:     /admin/guardar-imagen-banner/
+    defaults: { _controller: WebBundle:Admin:guardarImagenBanner }
+    options:
+        expose: true
+
+ajax_eliminar_imagen_banner:
+    path:     /admin/eliminar-imagen-banner/
+    defaults: { _controller: WebBundle:Admin:eliminarImagenBanner }
+    options:
+        expose: true
+
+ajax_enviar_pedido:
+    path:     /arma-torta/enviar-pedido/
+    defaults: { _controller: WebBundle:Arma:enviarPedido }
+    options:
+        expose: true
+
+ajax_guardar_paso:
+    path:     /arma-torta/guardar-paso/
+    defaults: { _controller: WebBundle:Arma:guardarPaso }
+    options:
+        expose: true
+
+ajax_eliminar_paso:
+    path:     /arma-torta/eliminar-paso/
+    defaults: { _controller: WebBundle:Arma:eliminarPaso }
+    options:
+        expose: true
+
+ajax_guardar_imagen_categoria:
+    path:     /admin/guardar-imagen-categoria/
+    defaults: { _controller: WebBundle:Admin:guardarImagenCategoria }
+    options:
+        expose: true
+
+ajax_eliminar_imagen_categoria:
+    path:     /admin/eliminar-imagen-categoria/
+    defaults: { _controller: WebBundle:Admin:eliminarImagenCategoria }
+    options:
+        expose: true

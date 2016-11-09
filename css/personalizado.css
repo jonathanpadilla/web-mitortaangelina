@@ -1,0 +1,17 @@
+#file_foto_galeria, #file_imagen_banner{
+	display: none;
+}
+
+.error{
+	color: red;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#contacto input, #contacto textarea{
+	margin:0;
+}
+
+.form_s1, .form_s2, .form_s3{
+	margin-bottom: 10px;
+}

@@ -1,0 +1,310 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+  <!-- <link rel="stylesheet" href="{{ absolute_url(asset('css/personalizado.css')) }}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.8/css/lightgallery.min.css">
+<style>
+  #fotos .mix{
+      display: none;
+  }
+
+  .filter{
+    cursor: pointer;
+  }
+
+  #fotos{
+    margin-top:100px;
+  }
+
+  #fotos .column{
+    margin-bottom: 28px;
+  }
+
+  .column > div{
+    padding: 2px;
+    border: 1px solid #ff7282;
+  }
+
+  #admin-categoria{
+    width: 350px;
+    margin: 0 auto 60px;
+    border: 1px solid #ff7282;
+    padding: 25px;
+  }
+
+  #btn_buscar_imagen, .btn_guardar_imagen{
+    border: 2px solid #ff7282;
+    padding: 5px;
+    color: #ff7282;
+  }
+
+  .nombre_imagen{
+    margin-bottom:10px;
+  }
+
+  #file_foto{
+    display:none;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="tittle" class="title">
+          
+  <div class="row">
+    <div class="medium-12 columns">
+
+      <div class="wrapper">
+
+        <h2>Nuestras Tortas</h2>
+        <img src="{{ absolute_url(asset('img/tbottom.png')) }}">
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="bloque3">
+
+  <div class="row">
+    <div class="medium-12 columns">
+
+      <div class="wrapper">
+
+        <div id="cont-b3">
+        
+          <div class="row">
+            <div class="medium-12 columns">
+              
+              {% if session %}
+              <div class="wrapper">
+                <div>
+                  <h3>Administrar</h3>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="medium-12">
+                      <div id="admin-categoria">
+                        <form id="form_subir_foto_categoria" action="#" method="post" enctype="multipart/form-data">
+                          <a href="#" id="btn_buscar_imagen">Buscar imagen</a>
+                          <input type="file" name="foto" id="file_foto">
+                          <div class="nombre_imagen"></div>
+                          <select name="select_categoria" id="select_categoria">
+                            <option value="1">Cumpleaños</option>
+                            <option value="2">Matrimonio</option>
+                            <option value="3">Bautizo</option>
+                            <option value="4">Festividades</option>
+                          </select>
+                          <button type="button" class="btn_guardar_imagen">Guardar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+        
+              <div class="wrapper">
+        
+                <div class="medium-12 large-3 columns">
+                  
+                  <div class="row">
+
+                    <div class="medium-12 columns filter" data-filter=".category-1">
+
+                      
+                      <div class="medium-12 columns" id="flotante">
+                        
+                        <img src="{{ absolute_url(asset('img/cake4.png')) }}">
+
+                      </div>
+
+                      <div class="medium-12 columns" id="clr">
+
+                        <div class="resize-div">
+
+                        </div>
+
+                      </div>
+
+                      <div class="medium-12 columns">
+                        
+                        <h5>Cumpleaños</h5>
+
+                      </div>
+
+                      <div class="medium-12 columns editar_texto_area" id="clr2" data-item="p" data-id="15" data-campo="2">
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur Curabitur ornare ex vitae mauris faucibus interdumadipiscing elit.</p>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="medium-12 large-3 columns">
+                  
+                  <div class="row">
+
+                    <div class="medium-12 columns filter" data-filter=".category-2">
+
+                      
+                      <div class="medium-12 columns" id="flotante">
+                        
+                        <img src="{{ absolute_url(asset('img/cake5.png')) }}">
+
+                      </div>
+
+                      <div class="medium-12 columns" id="clr">
+
+                        <div class="resize-div">
+
+                        </div>
+                        
+                      </div>
+
+                      <div class="medium-12 columns">
+                        
+                        <h5>Matrimonio</h5>
+
+                      </div>
+
+                      <div class="medium-12 columns editar_texto_area" id="clr2" data-item="p" data-id="16" data-campo="2">
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur Curabitur ornare ex vitae mauris faucibus interdumadipiscing elit.</p>
+
+                      </div>
+
+                    </div>
+
+                    </div>
+
+                  </div>
+
+
+
+                <div class="medium-12 large-3 columns">
+                  
+                  <div class="row">
+
+                    <div class="medium-12 columns filter" data-filter=".category-3">
+
+                      
+
+                      <div class="medium-12 columns" id="flotante">
+                        
+                        <img src="{{ absolute_url(asset('img/cake6.png')) }}">
+
+                      </div>
+
+                      <div class="medium-12 columns" id="clr">
+
+                        <div class="resize-div">
+
+                        </div>
+                        
+                      </div>
+
+                      <div class="medium-12 columns">
+                        
+                        <h5>bautizo</h5>
+
+                      </div>
+
+                      <div class="medium-12 columns editar_texto_area" id="clr2" data-item="p" data-id="17" data-campo="2">
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur Curabitur ornare ex vitae mauris faucibus interdumadipiscing elit.</p>
+
+                      </div>
+
+                    </div>
+                      
+                    </div>
+
+                  </div>
+
+
+
+                <div class="medium-3 columns">
+                  
+                  <div class="row">
+
+                    <div class="medium-12 columns filter" data-filter=".category-4">
+
+                      
+                      <div class="medium-12 columns" id="flotante">
+                        
+                        <img src="{{ absolute_url(asset('img/cake7.png')) }}">
+
+                      </div>
+
+                      <div class="medium-12 columns" id="clr">
+
+                        <div class="resize-div">
+
+                        </div>
+                        
+                      </div>
+
+                      <div class="medium-12 columns">
+                        
+                        <h5>Festividades</h5>
+
+                      </div>
+
+                      <div class="medium-12 columns editar_texto_area" id="clr2" data-item="p" data-id="18" data-campo="2">
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur Curabitur ornare ex vitae mauris faucibus interdumadipiscing elit.</p>
+
+                      </div>
+
+                    </div>
+                      
+                    </div>
+
+                  </div>
+
+                  <div class="medium-12 large-12 columns">
+                    <div class="row large-up-4 lightbox" id="fotos">
+                        {% for imagen in categoria %}
+                        <div class="column mix category-{{ imagen.categoria }}">
+                          <div>
+                            <a class="item" href="{{ absolute_url(asset(imagen.foto)) }}"><img src="{{ absolute_url(asset(imagen.foto)) }}"></a>
+                          </div>
+                          {% if session %}
+                            <a href="#" data-id="{{ imagen.id }}" class="btn_eliminar_imagen">Eliminar</a>
+                          {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.8/js/lightgallery-all.min.js"></script>
+  <script src="{{ absolute_url(asset('/js/jquery.mixitup.min.js')) }}"></script>
+  <script src="{{ absolute_url(asset('/js/categoria.js')) }}"></script>
+{% endblock %}
